@@ -1,4 +1,4 @@
-export async function getAllNfts({ pageParam }) {
+export async function getAllNfts({ pageParam }: { pageParam: string }) {
   try {
     console.log(pageParam, "pageParam");
     const res = await fetch(

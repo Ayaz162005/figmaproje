@@ -77,7 +77,7 @@ export const getUser = async (email: string) => {
   }
 };
 
-export const updateUser = async (dat) => {
+export const updateUser = async (dat: { email: string }) => {
   try {
     const res = await fetch("http://localhost:5000/v1/user/update", {
       method: "POST",
@@ -104,7 +104,10 @@ export const updateUser = async (dat) => {
   }
 };
 
-export const resetpassword = async (data) => {
+export const resetpassword = async (data: {
+  data: { data: string };
+  id: string;
+}) => {
   console.log(data);
   try {
     const res = await fetch(
@@ -137,7 +140,7 @@ export const resetpassword = async (data) => {
   }
 };
 
-export const forgotpassword = async (data) => {
+export const forgotpassword = async (data: { email: string }) => {
   console.log(data);
   try {
     const res = await fetch(`http://localhost:5000/v1/user/forgotpassword`, {

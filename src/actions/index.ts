@@ -18,7 +18,7 @@ export async function checkverify() {
   }
 }
 
-export async function updateLike(data) {
+export async function updateLike(data: { who: string; whom: string }) {
   try {
     const res = await fetch("http://localhost:5000/v1/updatelike", {
       method: "POST",
